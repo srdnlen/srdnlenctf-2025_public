@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Movement Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #87CEEB;
+        background: linear-gradient(200deg, #1a2a6c, #1fb275, #2de5fd); /* Animated gradient */
+        background-size: 800% 800%;
+        animation: gradientAnimation 10s ease infinite;
+        font-family: 'Impact', Charcoal, sans-serif;
+    }
+
+    @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #gameCanvas {
+            border: 2px solid #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-image: url('/static/img/background.jpg'); /* Add a background */
+            background-size: cover;
+            background-position: center;
+            margin: 0 100px;
+        }
+
+        .bird {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        .scoreboard {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .play {
+            margin-left: 0;
+            position: relative;
+            height: 600px;
+            width: 80px;
+            border-radius: 8px;
+            border: none;
+            background: #119cdd;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .play a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    {% if position %}
+    <div class="scoreboard">You are #{{ position }} in the queue.</div>
+    {% endif %}
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <style>
+        #gameCanvas {
+            border: 16px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+            background-size: cover;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden; 
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+            background-size: cover;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+    <button class="play"><a href="/play">PLAY</a></button>
+    
+    <script>
+        const socket = io();
+
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const birdImage = new Image();
+        birdImage.src = '/static/img/bird.png';  
+
+
+        function drawBird(bird) {
+            const birdWidth = 65;
+            const birdHeight = 65;
+
+            ctx.save();
+            ctx.translate(bird.x + birdWidth / 2, bird.y + birdHeight / 2);
+            ctx.rotate(bird.angle);
+            ctx.drawImage(birdImage, -birdWidth / 2, -birdHeight / 2, birdWidth, birdHeight);
+            ctx.restore();
+        }
+
+        function drawAllBirds(birds) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let userId in birds) {
+                drawBird(birds[userId]);
+            }
+        }
+
+        socket.on('update_bird_positions', (birds) => {
+            drawAllBirds(birds)
+        });
+
+    </script>
+</body>
+</html>

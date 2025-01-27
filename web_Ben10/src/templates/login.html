@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="login-container">
+        <h2>Login</h2>
+        
+        <form method="POST">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="message-container">
+                {% for category, message in messages %}
+                    <p class="error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+
+        <br>
+        
+        <p><a href="{{ url_for('register') }}">Sign Up</a></p>
+        <p><a href="{{ url_for('reset_password') }}">Forgot Password?</a></p>
+    </div>
+{% endblock %}

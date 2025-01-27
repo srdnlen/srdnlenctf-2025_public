@@ -1,0 +1,34 @@
+{
+  "title": "Sparkling Sky",
+  "description": "I am developing a game with websockets in python. I left my pc to a java fan, I think he really messed up.\n\n*It is forbidden to perform or attempt to perform any action against the infrastructure or the challenge itself.*\n\n- username: user1337\n- password: user1337\n- website: [http://sparklingsky.challs.srdnlen.it](http://sparklingsky.challs.srdnlen.it)\n\nauthor: @sanmatte",
+  "authors": [
+    "Nome Cognome <@sanmatte>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{I_th1nk_h3_r34lly_m3ss3d_up\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "sparklingsky.zip",
+      "type": "upload",
+      "path": "./attachments/sparklingsky.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://sparklingsky.challs.srdnlen.it:80/"
+  }
+}

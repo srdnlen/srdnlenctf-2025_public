@@ -1,0 +1,44 @@
+{
+  "title": "SSPJ",
+  "description": "This SSPJ (Super Secure Python Jail) will drive you crazy!!\n\nThis is a remote challenge, you can connect to the service with: `nc sspj.challs.srdnlen.it 1717`",
+  "authors": [
+    "Nicholas Meli <@uNickz>"
+  ],
+  "tags": [
+    "misc"
+  ],
+  "hiddenTags": [
+    "pyjail",
+    "sandbox-escape"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{Cr4zY_Us3_0f_G3t4tTr_1n_PyTh0n_1nT3rN4lS\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "SSPJ.zip",
+      "type": "upload",
+      "path": "./attachments/SSPJ.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "sspj.challs.srdnlen.it",
+    "port": 1717
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

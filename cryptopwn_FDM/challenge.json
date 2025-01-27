@@ -1,0 +1,47 @@
+{
+  "title": "Future Desk Market",
+  "description": "# Future Desk Market\n\nThis service is a marketplace where you can put your desks for sale and see the desks that others put for sale; in this market the listings can be signed in order to allow other users to verify their authenticity.\n\nOur current monetization plan isn't fully defined yet. We are working on a premium plan but that isn't released yet...\n\nIn the next FDM update, you will be able to buy a FDM GOLD subscription that will give you access to some extra features:\n\n - Login authentication for improved security\n - Customizable colors in listing descriptions (BETA)\n - Listing preview (BETA)\n - Remove listings\n\nFor the time being it's not possible to buy the FDM GOLD plan, as our admin is still testing the new features, but you can still use the basic features.\n\nThis is a remote challenge, you can connect to the service with: `nc fdm.challs.srdnlen.it 2025`\n\nAuthors: @doliv & @guaddu\n\nsha1sum(s):\n\n```bash\n2e8fdfe5d5f6dc574338b9eb94476ad1dd01d17c  Dockerfile\n53702c307c7125884f0a7bc7d368c396ff225887  FDM\n```",
+  "authors": [
+    "Diego Oliva <@doliv>",
+    "Davide Sechi <@guaddu>"
+  ],
+  "tags": [
+    "crypto",
+    "pwn"
+  ],
+  "hiddenTags": [
+    "ECDSA",
+    "lattice",
+    "heap"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{l1l_b1t_0f_crypt0_l1l_b1t_0f_pwn_337342a17741ef0b\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "Dockerfile",
+      "type": "upload",
+      "path": "./attachments/Dockerfile",
+      "dynamic": false
+    },
+    {
+      "name": "FDM",
+      "type": "upload",
+      "path": "./attachments/FDM",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "fdm.challs.srdnlen.it",
+    "port": 2025
+  }
+}

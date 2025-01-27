@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="image-container">
+        <h2>Ben10 presents you:</h2>
+        <h1>{{ image_name }}</h1>
+        <!-- Display the image -->
+        <img src="{{ url_for('static', filename='images/' + image_name + '.webp') }}" alt="{{ image_name }}" style="max-width: 100%; height: auto;">
+    
+
+        {% if flag %}
+        <div class="flag-container">
+            <p class="error">Flag: {{ flag }}</p>
+        </div>
+        {% endif %}
+        <br>
+
+        <!-- Link to go back to the home page -->
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+{% endblock %}

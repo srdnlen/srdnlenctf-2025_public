@@ -1,0 +1,31 @@
+{
+  "title": "A child's dream",
+  "description": "In 1990, a new console was released in Japan.\nThe beginning of a new era, of a child's dream,\nWhere exploits were still unknown,\nAnd a new world was yet to be discovered.\n\n**This is a special PWN challenge.** First, try to solve the challenge locally. If you believe you have the solution, **open a ticket where you describe with the keystrokes your exploit**, and we will open an online instance for you.\n\nAuthors: @davezero & @church",
+  "authors": [
+    "Davide Maiorca <@davezero>",
+    "Matteo Chiesa <@church>"
+  ],
+  "tags": [
+    "pwn"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{l0ng_l1f3_t0_sn3s!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 30
+  },
+  "files": [
+    {
+      "name": "breakout.sfc",
+      "type": "upload",
+      "path": "./attachments/breakout.sfc",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

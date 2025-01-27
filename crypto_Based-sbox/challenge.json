@@ -1,0 +1,44 @@
+{
+  "title": "Based sbox",
+  "description": "ChatGPT cooked a story for us:\n\n> Once upon a time, after linear and differential cryptanalysis had revolutionized the cryptographic landscape, and before Rijndael was selected as the Advanced Encryption Standard (AES), the field of cryptography was in a unique state of flux. New cryptanalytic methods exposed vulnerabilities in many established ciphers, casting doubt on the long-term security of systems once thought to be invulnerable. In response, the U.S. National Institute of Standards and Technology (NIST) launched a competition to find a successor to the aging DES. In 2000, Rijndael was chosen, setting a new standard for secure encryption. But even as AES became widely adopted, new challenges, like quantum computing, loomed on the horizon.\n\nThis is a remote challenge, you can connect to the service with: `nc basedsbox.challs.srdnlen.it 46173`",
+  "authors": [
+    "Lornezo Siriu <@lrnzsir>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [
+    "symmetric",
+    "algebraic attack"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{that_sbox_was_truly_ba5ed_right\\?\\.\\.\\.hopefully_you_learned_a_bit_about_its_history\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "server.py",
+      "type": "upload",
+      "path": "./attachments/server.py",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "basedsbox.challs.srdnlen.it",
+    "port": 46173
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

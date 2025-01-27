@@ -1,0 +1,36 @@
+{
+  "title": "Cheese with Friends",
+  "description": "I NEED to tell you about my terrible experience with that cheese, ALL OF YOU need to know! I will post my experience on my blog, but first I have to write it on my Windows PC using Visual Studio Code.\n\nAuthor: @church",
+  "authors": [
+    "Matteo Chiesa <@church>"
+  ],
+  "tags": [
+    "foren"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{R0t73n_5H0r7Cu75\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "README_cheese_with_friends.md",
+      "type": "upload",
+      "path": "./attachments/README_cheese_with_friends.md",
+      "dynamic": false
+    },
+    {
+      "name": "cheese_with_friends.pcap",
+      "type": "upload",
+      "path": "./attachments/cheese_with_friends.pcap",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

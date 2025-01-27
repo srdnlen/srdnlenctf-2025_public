@@ -1,0 +1,41 @@
+{
+  "title": "Ben 10",
+  "description": "Ben Tennyson's Omnitrix holds a mysterious and powerful form called Materia Grigia \u2014 a creature that only those with the sharpest minds can access. It's hidden deep within the system, waiting for someone clever enough to unlock it. Only the smartest can access what\u2019s truly hidden.\n\nCan you outsmart the system and reveal the flag?\n\nWebsite: [http://ben10.challs.srdnlen.it](http://ben10.challs.srdnlen.it)\n\nAuthor: @gheddus",
+  "authors": [
+    "Nome Cognome <@gheddus>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{b3n_l0v3s_br0k3n_4cc355_c0ntr0l_vulns\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "ben10.zip",
+      "type": "upload",
+      "path": "./attachments/ben10.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "ben10.challs.srdnlen.it",
+    "port": 80
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

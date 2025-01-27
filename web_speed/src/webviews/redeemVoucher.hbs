@@ -1,0 +1,125 @@
+<form id="voucher-form" style="width: 40%; margin-left: 30%">
+    <h1 class="h3 mb-3 fw-normal">Redeem Your Lightning McQueen Voucher!</h1>
+    
+    <!-- Add input field for gift card value -->
+    <input type="text" id="gift-card-value" placeholder="Enter Gift Card Code" style="width: 90%; padding: 10px; margin: 5px; outline: none;"/>
+
+    <button type="submit" style="padding: 10px 20px; background-color: #FF6347; color: white; border: none; cursor: pointer;">
+        Redeem Lightning Voucher
+    </button>
+
+    <!-- Message div that will show success or error messages -->
+    <div id="response" class="text-center small py-1" style="border-radius: 4px; margin-top: 10px; display: none;">
+        {{#if message}}
+            <div class="text-bg-success py-4" style=" width: 40vw; border-radius: 8px; text-align: center; margin: 0 auto; margin-top: 20vh;">
+                {{message}}
+            </div>
+        {{/if}}
+    </div>
+</form>
+
+<style>
+    h1 {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #FF6347; /* Lightning McQueen Red */
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 5px;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: 150px;
+        background-color: #FF6347; /* Lightning McQueen Red */
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    input::placeholder {
+        color: #000000;
+        opacity: 1;
+    }
+
+    input:placeholder-shown {
+        border: 1px solid #FF6347;
+    }
+
+    button:hover {
+        background-color: #FF4500; /* Darker red */
+    }
+
+    .text-bg-success {
+        background-color: #32CD32; /* Radiator Springs Green */
+    }
+
+    .text-bg-danger {
+        background-color: #FF4500; /* Danger (Lightning McQueen style) */
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Centering the response container */
+    #response {
+        display: flex;
+        justify-content: center;  /* Horizontally center the message */
+        align-items: center;  /* Vertically center the message */
+        width: 100%; /* Ensure the div takes up the full width of the parent */
+    }
+
+    /* Center the success/error message box inside the container */
+    .text-bg-success, .text-bg-danger {
+        width: 40vw; /* Ensure it is responsive and centered */
+        text-align: center;
+        margin-top: 20vh; /* Center the message vertically */
+        border-radius: 8px;
+    }
+</style>
+
+<script>
+document.getElementById('voucher-form').onsubmit = async (e) => {
+    e.preventDefault();
+
+    const responseElement = document.getElementById('response');
+    responseElement.style.display = 'none'; // Hide previous messages
+
+    // Get the gift card value entered by the user
+    const giftCardValue = document.getElementById('gift-card-value').value;
+
+    // Check if gift card value is a valid number
+    if (!giftCardValue) {
+        responseElement.textContent = 'Please enter a valid Lightning McQueen code!';
+        responseElement.style.color = 'red';
+        responseElement.style.display = 'block';
+        return;
+    }
+
+    try {
+        // Send the gift card value to the server as part of the request
+        const req = await fetch('/redeem?discountCode=' + giftCardValue, {
+            method: 'GET',
+        });
+
+        const data = await req.json();
+
+        if (req.ok) {
+            // Success response, show success message
+            responseElement.innerHTML = `<div class="text-bg-success py-4" style=" width: 40vw; border-radius: 8px; margin: 0 auto; margin-top: 20vh; text-align: center;">${data.message}</div>`;
+        } else {
+            // Error response, show error message
+            responseElement.innerHTML = `<div class="text-bg-danger py-4" style=" width: 40vw; border-radius: 8px; margin: 0 auto; margin-top: 20vh; text-align: center;">${data.message + 'Maybe Lightning McQueen needs a pit stop!'}</div>`;
+        }
+
+        responseElement.style.display = 'block'; // Display the message div
+    } catch (err) {
+        responseElement.textContent = 'Failed. Did you forget to fuel up?';
+        responseElement.style.color = 'red';
+        responseElement.style.display = 'block';
+    }
+};
+</script>

@@ -1,0 +1,44 @@
+{
+  "title": "Another Impossible Escape",
+  "description": "This year, the Impossible Escape is back! But this time, it's in a limited edition!\n\nThis is a remote challenge, you can connect to the service with: `nc aie.challs.srdnlen.it 3434`",
+  "authors": [
+    "Nicholas Meli <@uNickz>"
+  ],
+  "tags": [
+    "misc"
+  ],
+  "hiddenTags": [
+    "pyjail",
+    "sandbox-escape"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{Wh4t\\?_DuMp1nG_S0uRc3_C0d3_Fr0m_RuNn1nG_Pr0c3sS\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "chall.py",
+      "type": "upload",
+      "path": "./attachments/chall.py",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "aie.challs.srdnlen.it",
+    "port": 3434
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

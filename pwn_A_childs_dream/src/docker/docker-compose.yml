@@ -1,0 +1,7 @@
+services:
+    pwn-childs-dream:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 10000:10000

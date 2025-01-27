@@ -1,0 +1,30 @@
+{
+  "title": "It's not what it seems",
+  "description": "Oh man, I hate self-inverse ciphers",
+  "authors": [
+    "Simone Sulis <@salsa>"
+  ],
+  "tags": [
+    "rev"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{n3v3r_tru5t_Th3_m41n_funct10n\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "chall",
+      "type": "upload",
+      "path": "./attachments/chall",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  confusion:
+    build: ./
+    container_name: confusion
+    ports:
+      - "0.0.0.0:1338:1337"

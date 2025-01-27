@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  basedsbox:
+    build: ./
+    container_name: basedsbox
+    ports:
+      - "0.0.0.0:1337:1337"

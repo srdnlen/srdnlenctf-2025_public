@@ -1,0 +1,34 @@
+{
+  "title": "Average HTTP/3 Enjoyer",
+  "description": "HTTP/3 is just the best version of HTTP, wait a few years ~~, until setting up an HTTP/3 server will not be a pain,~~ and you\u2019ll see. I hid a secret on /flag, you can only get it if you become a real HTTP/3 enjoyer.\n\nNOTE: This challenge uses only HTTP/3, browsers are a bit hesitant in using it by default, so you\u2019ll have to use explicit arguments to do so.\n\nIn chrome you can do the following:\n\n`chrome --enable-quic --origin-to-force-quic-on=enjoyer.challs.ctf.srdnlen.it`",
+  "authors": [
+    "Lorenzo Pisu <@pysu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{you_found_the_:path_for_becoming_a_real_http3_enjoyer\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "average_http3_enjoyer.zip",
+      "type": "upload",
+      "path": "./attachments/average_http3_enjoyer.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://enjoyer.challs.ctf.srdnlen.it:80/"
+  }
+}

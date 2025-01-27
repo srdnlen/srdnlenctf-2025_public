@@ -1,0 +1,41 @@
+{
+  "title": "Focus. Speed. I am speed.",
+  "description": "Welcome to Radiator Springs' finest store, where every car enthusiast's dream comes true! But remember, in the world of racing, precision matters\u2014so tread carefully as you navigate this high-octane experience. Ka-chow!\n\nWebsite: [http://speed.challs.srdnlen.it](http://speed.challs.srdnlen.it)\n\nAuthor: [@Octaviusss](https://github.com/Octaviusss)",
+  "authors": [
+    "Federico Loi <@Octaviusss>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{6peed_1s_My_0nly_Competition\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "SPEED.zip",
+      "type": "upload",
+      "path": "./attachments/SPEED.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "speed.challs.srdnlen.it",
+    "port": 80
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

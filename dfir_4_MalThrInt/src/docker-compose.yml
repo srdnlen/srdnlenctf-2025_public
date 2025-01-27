@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  dfir1:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: dfir4
+    ports:
+      - "0.0.0.0:1987:8888"
+    restart: always

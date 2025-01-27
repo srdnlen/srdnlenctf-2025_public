@@ -1,0 +1,37 @@
+{
+  "title": "DFIR 1 - Malvent",
+  "description": "We have been notified of an attack in one of our machines. This is a real forensics investigation and you have to analyse the given evtx files and answer to the related questions. At the end you will get the flag when you answer everything correct.\n\nNOTE: **This is a real malware**. Do not execute nothing. Pay attention and be careful. Srdnlen denies every damage on your infrastructure.\n\nThis is a remote challenge, you can connect to the service with: `nc dfir1.challs.srdnlen.it 1984`",
+  "authors": [
+    "Silvia Sanna <@slsanna>"
+  ],
+  "tags": [
+    "dfir"
+  ],
+  "hiddenTags": [
+    "foren"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{DFIR1:evtx4system_mngmnt&malwan\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "al_evtx.zip",
+      "type": "upload",
+      "path": "./attachments/al_evtx.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "dfir1.challs.srdnlen.it",
+    "port": 1984
+  }
+}

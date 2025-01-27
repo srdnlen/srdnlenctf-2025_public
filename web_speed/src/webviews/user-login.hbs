@@ -1,0 +1,90 @@
+<form id="login-form" style="width: 40%; margin-left: 30%">
+    <h1 class="h3 mb-3 fw-normal">Pit Stop Login</h1>
+    <p class="lead">Fuel up and join Lightning McQueen for another race!</p>
+
+  <div class="form-group">
+    <label for="login-username">Enter Your Racing Name</label>
+    <input type="text" class="form-control" id="login-username" aria-describedby="usernameHelp" placeholder="Enter your Lightning Speed username">
+  </div>
+
+  <div class="form-group">
+    <label for="login-password">Pit Stop Password</label>
+    <input type="password" class="form-control" id="login-password" placeholder="Enter your secret pit stop password">
+  </div>
+
+  <input id="login-submit" class="w-100 btn btn-lg btn-warning" type="submit" value="Start Your Engine!"></input>
+
+  <br/>
+  <br/>
+  <div id="response" class="text-center small py-1" style="border-radius: 4px; display: none"></div>
+</form>
+
+<style>
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 5px;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: 150px;
+        background-color: #FF6347; /* Tomato Red */
+        border: none;
+    }
+
+    input::placeholder {
+        color: #000000;
+        opacity: 1;
+    }
+
+    input:placeholder-shown {
+        border: 1px solid #FF6347;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .lead {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #FF6347; /* Tomato Red */
+    }
+
+    .btn-warning:hover {
+        background-color: #FF4500; /* Darker Red */
+    }
+
+    h1, p {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+</style>
+
+<script>
+    document.getElementById('login-form').onsubmit = async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById('login-username').value;
+        const password = document.getElementById('login-password').value;
+
+        const req = await fetch('/user-login', {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const res = await req.json();
+
+        if (res.success) {
+            window.location.href = '/';
+            return;                
+        } else {
+            document.getElementById('response').innerText = 'Error: Incorrect username or password!';
+            document.getElementById('response').style.display = 'block';
+            document.getElementById('response').style.color = 'red';
+        }
+    };
+</script>

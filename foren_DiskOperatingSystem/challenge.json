@@ -1,0 +1,32 @@
+{
+  "title": "Disk Operating System",
+  "description": "Since I always forget my password I decided to hide it in the OS. Is it safe right?",
+  "authors": [
+    "Davide Maiorca <@Davezero>",
+    "Daniele Orr\u00f9 <@Den1211>",
+    "Simone Sulis <@salsa>"
+  ],
+  "tags": [
+    "foren"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{d1d_y0u_kn0w_th4t_th3_D0S_s0urc3_w4s_r3l34s3d\\?\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "dos_disk.qcow2",
+      "type": "upload",
+      "path": "./attachments/dos_disk.qcow2",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

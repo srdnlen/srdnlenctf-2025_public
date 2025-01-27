@@ -1,0 +1,225 @@
+/*
+You’re better off not checking here to save time, this file sucks as it is, and I don’t even get how the hell it works
+
+Best Regards,
+the author (not a front-end engineer)
+*/
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('/static/images/background.png'); /* Ensure the image path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header and text styles */
+h1, h2 {
+    text-align: center;
+    color: #071407;
+    text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.8);
+    font-size: 50px;  /* Larger font size */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.error {
+    text-align: center;
+    color: #f30a1e;
+    text-shadow: 2px 2px 10px rgba(0, 255, 0, 0.8);
+    font-size: 30px;  /* Larger font size */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Button styles */
+button, input[type="submit"], .reset-token-info button {
+    background-color: #00FF00;
+    color: #1f1f1f;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px auto;
+    display: block;
+}
+
+button:hover, input[type="submit"]:hover, .reset-token-info button:hover {
+    background-color: #00cc00;
+}
+
+/* Link styles */
+a {
+    color: #140601;  /* Contrasting color for links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2ca009;  /* Slightly different shade for hover effect */
+}
+
+/* Form styles */
+form {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: #333;
+    color: white;
+}
+
+input[type="submit"] {
+    background-color: #00FF00;
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #009900;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+    color: #0e8f00;
+}
+
+footer a {
+    color: #44ff00;  /* Footer link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #49ff01;
+}
+
+/* Centering links */
+.centered-link {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+/* Image Grid */
+#image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+#image-grid img {
+    width: 100%;
+    max-width: 200px;
+    border: 3px solid #fff;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#image-grid img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Image container style */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.image-container img {
+    max-width: 90%;
+    height: auto;
+    border: 5px solid #ffffff;
+}
+
+/* Heading for image container */
+h2 {
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Reset Password Styles */
+.reset-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.reset-token-info {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    width: 60%;
+    max-width: 400px;
+}
+
+.reset-token-info p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.reset-token-info button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #00FF00;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-token-info button:hover {
+    background-color: #00cc00;
+}
+

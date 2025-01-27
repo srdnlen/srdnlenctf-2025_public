@@ -1,0 +1,1 @@
+tcp,speed.challs.srdnlen.it,80

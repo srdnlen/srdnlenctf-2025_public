@@ -1,0 +1,1 @@
+tcp,chess.challs.srdnlen.it,4012

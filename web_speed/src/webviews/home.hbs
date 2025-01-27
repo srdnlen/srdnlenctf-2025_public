@@ -1,0 +1,26 @@
+{{#if Authenticated}}
+    <h3 class="text-center" style="color: #FF6347;">Welcome, {{username}}! Ready to race?</h3>
+    <br/>
+
+    <div class="row">
+        {{#each ownedproducts}}
+        <div class="col-sm-6">
+            <div class="card w-60 text-white bg-dark mb-3" style="max-width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Product: <b>{{Name}}</b> <span style="color: #FF6347;">(Lightning McQueen’s Favorite!)</span></h5>  <!-- Correct field: Name -->
+                    <p class="card-text">Description: {{Description}}</p>  <!-- Correct field: Description -->
+                    <p class="card-text">Cost: ${{Cost}} (Perfect for your next race!)</p>  <!-- Correct field: Cost -->
+                    {{#if FLAG}} 
+                    <p class="card-text">Flag: {{FLAG}}</p>  <!-- Correct field: FLAG (if exists) -->
+                    {{/if}}
+                    <!-- Debugging the transactionId -->
+                    <p>Transaction ID: {{transactionId}}</p>
+                    <p class="card-text" style="font-size: 14px;">* Powered by Radiator Springs*</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{else}}
+    <h3 class="text-center" style="color: #FF6347;">Start your engine! 🚗💨 Log in or register to explore the Cars Store and get your Lightning McQueen gear!</h3>
+{{/if}}

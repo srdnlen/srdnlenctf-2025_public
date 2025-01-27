@@ -1,0 +1,40 @@
+Blog #17
+
+Title: My Unsettling Encounter with Casu Martzu.
+
+I had always considered myself an adventurous eater, eager to try the world{ALT|PAD_3+PAD_9}s most exotic delicacies.
+When I visited Sardinia, the promise of experiencing Casu Martzu - the infamous {ALT|PAD_3+PAD_4}rotten cheese{ALT|PAD_3+PAD_4}, teeming with live maggots - felt like a once-in-a-lifetime opportunity. This wasn{ALT|PAD_3+PAD_9}t just food; it was a cultural ritual, steeped in tradition and controversy.
+However, nothing could prepare me for the reality of facing that wiggling block of pecorino. As the host ceremoniously removed the covering, revealing the cheese alive with larvae, my confidence began to waver.
+The smell hit first: a potent, ammonia-like aroma mixed with a hint of decay. My stomach tightened as I stared down at the challenge on my plate, unsure if I could muster the courage.
+
+When I finally worked up the nerve to take a bite, it was an experience like no other. The taste was a sharp assault on my senses: intensely tangy, rich, and bitter all at once.
+I could feel a slight crunch that I tried hard to ignore. I told myself it was part of the cheese{ALT|PAD_3+PAD_9}s crust, but deep down, I knew better.
+To make matters more surreal, I had to constantly guard my plate because the larvae were capable of jumping several inches high. My dining companions laughed, calling it the {ALT|PAD_3+PAD_4}dancing cheese{ALT|PAD_3+PAD_4}, but my nerves were frayed. It wasn{ALT|PAD_3+PAD_9}t just a meal, it was a gauntlet.
+
+The texture, though creamy, was complicated by the knowledge of its tiny inhabitants. It seems like this:
+*****$%***%*****$$%%$church%*$chu{ENTER}*%*chu{ENTER}%%$$chu{TAB}%%****$$chu{TAB}%*%*%*chu{PAD_ENTER}**$$chu{PAD_ENTER}%%$$chu{ENTER}%**$chu{TAB}%%$$chu{PAD_ENTER}%$%%*
+$+$%%&&${ALT|PAD_3+PAD_9}%%&+$%{ALT|PAD_9+PAD_6}$&&${ALT|PAD_3+PAD_9}%$=$&$&$+$%$=&${ALT|PAD_3+PAD_9}%$=$$&$&$&$&%)$&&$&%&$&&$%%&$$+$+*&%$=$&${ALT|PAD_3+PAD_9}%$=**&chu{ENTER}$=$&$&%&$&&$&%&$&&${ALT|PAD_3+PAD_9}%%&$$+$+&$&*&$&$&$&$$+$+$&chu{PAD_ENTER}$=$&$&$
+$$%$%%*$+$+&$$%$=$$+$%$=$&$&%&chu{TAB}$$&&chu{PAD_ENTER}$+$$%$%%**$&$chu{ENTER}&$&$&$&$&$+$%$=$$%$%%&chu{ENTER}$$&+$chu{ENTER}&%*%&chu{PAD_ENTER}$$&&$chu{TAB}&=$=$$
+$=%%$=&$&$$&$(%&$&&$&$&$&&$&&$$%%+&$&$&$&<$<$$&$$%$<$&$&%&$&&$&%$$+$+*chu{ENTER})$&&$&$&$&**chu{TAB})$&&$$%$$&&$&%&$&&$&*$+$+$&$&chu{TAB}&$&%&$&$+$+*chu{PAD_ENTER})$&$>$>
+{UP}{CTRL_L+SHIFT_R+PAD_ENTER}$&chu{PAD_ENTER}+&%&*=%%,%&&%&$&%&&%&$=chu{ENTER}&&%&$&%&$&$&$&%&$=%=$=chu{TAB}+$$=%%&+%+*&chu{ENTER}%+$&%&$&%&chu{PAD_ENTER}%%&chu{ENTER}%+$&%&$&%&$=chu{PAD_ENTER}+$&%&*+%+*=chu{TAB}%&=%%,%&+%+*&chu{ENTER}%+$&$&${DOWN}{DOWN}{BACKSPACE}
+&&%&$&%&$&$&$&%&$=%=$=chu{ENTER}+$$=%%&+%+*&chu{ENTER}%+$&%&$&%&chu{TAB}%%&chu{ENTER}%+$&%&$&%&$=chu{ENTER}+$&%&*+%+*=chu{TAB}%&=%%,%&+%+*&chu{PAD_ENTER}%+$&$&$
+$$chu{PAD_ENTER}$$%$%%$$%%&$&$%$%%$$&$&$$chu{ENTER}$$%$%%*$+$+&$$%$=$$+$%$=$&$&%&chu{TAB}$$&&chu{TAB}$+$$%$%%**$&$chu{PAD_ENTER}&$&$&$&$&$+$%$=$$%$%%&chu{TAB}$$&+$chu{PAD_ENTER}&%*%&chu{TAB}$$&&$chu{ENTER}&=$=$$
+**************$=%=************$$&chu{TAB}%%&******************$$+%+$$
+
+{BACKSPACE}{UP}{UP}{UP}{CTRL_L+x}{UP}{UP}{UP}{CTRL_R+SHIFT_L+k}{CTRL_L+END}
+{BACKSPACE}{SHIFT_L+PAD_8}{SHIFT_L+PAD_8}{SHIFT_L+PAD_8}{SHIFT_L+PAD_8}{ALT+SHIFT_R+PAD_2}{ALT+SHIFT_R+PAD_2}{SHIFT_L+PAD_8}{ALT+SHIFT_L+PAD_8}{ALT+SHIFT_L+PAD_8}{CTRL_L+SHIFT_R+PAD_1}
+{BACKSPACE}|{SHIFT_L+LEFT}{CTRL_L+c}{RIGHT}{BACKSPACE}
+{BACKSPACE}{CTRL_L+h}{ALT|PAD_4+PAD_3}{TAB}{CTRL_R+a}{PAD_DIV}{CTRL_L+ALT+ENTER}{ESC}{CTRL_R+END}
+{BACKSPACE}{CTRL_R+h}{ALT|PAD_6+PAD_1}{TAB}{CTRL_L+a}{ALT|PAD_9+PAD_2}{CTRL_R+ALT+PAD_ENTER}{ESC}{CTRL_L+SHIFT_R+PAD_1}
+{BACKSPACE}{CTRL_L+h}{ALT|PAD_3+PAD_8}{TAB}{CTRL_R+a}{CTRL_L+v}{CTRL_L+ALT+PAD_ENTER}{ESC}{CTRL_R+END}
+{BACKSPACE}chu{TAB}{CTRL_L+F2}___{ESC}{CTRL_L+SHIFT_R+PAD_1}{CTRL_R+BACKSPACE}
+{BACKSPACE}{ALT|PAD_3+PAD_7}{SHIFT_L+LEFT}{CTRL_R+SHIFT_L+l}_{ESC}{CTRL_R+END}{BACKSPACE}
+{BACKSPACE}{CTRL_R+g}19{ENTER}{SHIFT_L+RIGHT}{CTRL_L+SHIFT_L+l} {ESC}{CTRL_R+SHIFT_L+PAD_1}
+{BACKSPACE}{CTRL_R+g}15{UP}{CTRL_R+u}{ENTER}{SHIFT_R+RIGHT}{CTRL_R+f}{ALT+PAD_ENTER}   {ESC}{CTRL_L+END}
+
+Even hours later, I couldn{ALT|PAD_3+PAD_9}t shake the feeling of Casu Martzu. The taste lingered in my mouth, and my mind replayed the scene like a slow-motion horror film.
+Reflecting on it now, I{ALT|PAD_3+PAD_9}m not entirely sure if I regret the experience or cherish it for its sheer audacity.
+This cheese is banned in many countries for safety reasons, and after trying it, I understand why. But in a strange way, I also respect the Sardinian people for preserving such a raw and unapologetic tradition.
+Eating Casu Martzu was disconcerting, to say the least, but it was also an unforgettable reminder of how food can push the boundaries of culture, comfort, and even courage.
+
+by @Church

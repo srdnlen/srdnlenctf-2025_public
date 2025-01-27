@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome, {{ username }}</h1>
+    <h2>Do you like the aliens on my Omnitrix?</h2>
+    
+    <!-- secret admin username -->
+    <div style="display:none;" id="admin_data">{{ admin_username }}</div>
+    
+    <div id="image-grid">
+        {% for image_name in image_names %}
+            <div>
+                <img src="{{ url_for('static', filename='images/' + image_name + '.webp') }}" alt="{{ image_name }}" 
+                    onclick="window.location.href='/image/{{ image_name }}'" style="cursor:pointer;">
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('logout') }}" style="margin-top: 20px; display: block;">Logout</a>
+{% endblock %}

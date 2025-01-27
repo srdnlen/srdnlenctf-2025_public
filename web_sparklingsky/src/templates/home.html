@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB;
+            background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+            background-size: 800% 800%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: 'Impact', Charcoal, sans-serif;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .join-button {
+            font-size: 3em;
+            padding: 20px 40px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .join-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="join-button">Join Game</button>
+<script>
+    document.querySelector('.join-button').addEventListener('click', function() {
+        window.location.href = '/play';
+    });
+</script>
+</body>
+</html>
+<link href="https://fonts.googleapis.com/css2?family=Bokor&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Bokor', sans-serif;
+    }
+    .join-button {
+        font-family: 'Bokor', sans-serif;
+    }
+</style>

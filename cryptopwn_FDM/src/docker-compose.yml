@@ -1,0 +1,8 @@
+services:
+    cryptopwn-fdm:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        ports:
+            - 2025:1337

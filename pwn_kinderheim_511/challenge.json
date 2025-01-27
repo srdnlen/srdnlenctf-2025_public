@@ -1,0 +1,42 @@
+{
+  "title": "Kinderheim 511",
+  "description": "Long live the expo. No wait, I mixed that one up.\n\nThis is a remote challenge, you can connect to the service with: `nc k511.challs.srdnlen.it 1660`",
+  "authors": [
+    "Nome Cognome <@zoop>"
+  ],
+  "tags": [
+    "pwn",
+    "heap"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{my_heap_has_already_grown_this_large_1994ab0a77f8355a\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "k511.elf",
+      "type": "upload",
+      "path": "./attachments/k511.elf",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "k511.challs.srdnlen.it",
+    "port": 1660
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

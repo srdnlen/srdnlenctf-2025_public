@@ -1,0 +1,33 @@
+{
+  "title": "zk-Openings",
+  "description": "You will learn nothing from those openings. I can even hide an AES key in there and you wouldn't notice.",
+  "authors": [
+    "Lorenzo Siriu <@lrnzsir>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [
+    "zk",
+    "lattice"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{what\\?\\.\\.\\.how\\?\\.\\.\\.discrete_logarithm_assumption_doesn't_hold\\?\\.\\.\\.should_be_k_degree_hiding_polynomial\\?\\.\\.\\.well\\.\\.\\.you_deserve_this_flag!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "dist.zip",
+      "type": "upload",
+      "path": "./attachments/dist.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

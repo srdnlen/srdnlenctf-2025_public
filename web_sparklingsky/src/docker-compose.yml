@@ -1,0 +1,6 @@
+services:
+  sparkling_game:
+    build: .
+    restart: always
+    ports:
+      - "0.0.0.0:80:5000"

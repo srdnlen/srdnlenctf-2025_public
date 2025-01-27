@@ -1,0 +1,3 @@
+pwntools
+chess
+pycryptodome

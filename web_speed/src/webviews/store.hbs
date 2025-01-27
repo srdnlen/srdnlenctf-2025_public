@@ -1,0 +1,111 @@
+<form style="width: 40%; margin-left: 30%" id="create-form"></form>
+<h1 class="h3 mb-3 fw-normal">CARS OFFICIAL STORE</h1>
+<p class="lead">Shop the best racing gear and accessories straight from Radiator Springs!</p>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Action</th> <!-- Add Action Column for the Buy Button -->
+        </tr>
+    </thead>
+    <tbody>
+        {{#each Product}}
+        <tr>
+            <th scope="row">{{productId}}</th>
+            <td>{{Name}}</td>
+            <td>{{Description}}</td>
+            <td>{{Cost}}</td>
+            <td>
+                <!-- Add a Button to buy the product -->
+                <button type="button" class="btn btn-warning" onclick="buyProduct({{productId}})">Buy</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<!-- Redeem Your Gift Card Button -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="/redeemVoucher" class="btn btn-success">Redeem Your Lightning McQueen Gift Card</a>
+</div>
+
+<script>
+    // Function to send a POST request to the server with product name as JSON
+    async function buyProduct(productId) {
+        try {
+            const response = await fetch('/store', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    productId: productId
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert(`Vroom vroom! ${data.message}`);
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        } catch (error) {
+            console.error('Error during purchase:', error);
+            alert('An error occurred while processing the purchase. Maybe a pit stop is needed!');
+        }
+    }
+</script>
+
+<style>
+    h1 {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #FF6347; /* Tomato Red, like Lightning McQueen */
+    }
+
+    .lead {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #FF4500; /* Slightly darker red */
+    }
+
+    .btn-warning {
+        background-color: #FF6347; /* Lightning McQueen Red */
+        border: none;
+        color: white;
+    }
+
+    .btn-warning:hover {
+        background-color: #FF4500; /* Darker red for hover */
+    }
+
+    .btn-success {
+        background-color: #32CD32; /* Radiator Springs Green */
+        border: none;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background-color: #228B22; /* Darker green */
+    }
+
+    table {
+        margin-top: 20px;
+    }
+
+    table, th, td {
+        border: 2px solid #FF6347;
+    }
+
+    th, td {
+        text-align: center;
+    }
+
+    .table-dark {
+        background-color: #212529;
+    }
+</style>

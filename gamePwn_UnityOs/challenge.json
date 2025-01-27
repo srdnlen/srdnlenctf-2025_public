@@ -1,0 +1,30 @@
+{
+  "title": "UnityOs",
+  "description": "My first OS!\n\nIt requires a lot of DLLs!\n\nAuthor: @SannaZ",
+  "authors": [
+    "Massimo Sanna <@SannaZ>"
+  ],
+  "tags": [
+    "gamepwn"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{yUo_8RoK3_Th3_S1muLaT1oN\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "UnityOs.rar",
+      "type": "upload",
+      "path": "./attachments/UnityOs.rar",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

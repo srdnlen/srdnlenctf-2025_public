@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Movement Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #87CEEB;
+        background: linear-gradient(200deg, #1a2a6c, #1fb275, #2de5fd); /* Animated gradient */
+        background-size: 800% 800%;
+        animation: gradientAnimation 10s ease infinite;
+        font-family: 'Impact', Charcoal, sans-serif;
+    }
+
+    @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+    #gameCanvas {
+        border: 2px solid #333;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.8); /* Light background for better visibility */
+    }
+
+    .bird {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+    }
+
+    .scoreboard {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <style>
+        #gameCanvas {
+            border: 16px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+            background-size: cover;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden; 
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+            background-size: cover;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+
+    <script>
+        const socket = io();
+
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let myBird;
+        let targetX;
+        let targetY;
+        socket.on('connected', (data) => {
+            myBird = data;
+            targetX = myBird.x;
+            targetY = myBird.y;
+            updateBirdPosition();
+        });
+
+
+
+        const speed = 10; 
+        const keyMap = {}; 
+        const birdImage = new Image();
+        birdImage.src = '/static/img/bird.png';  
+        
+
+
+        function drawBird(bird) {
+            const birdWidth = 65;
+            const birdHeight = 65;
+
+            ctx.save();
+            ctx.translate(bird.x + birdWidth / 2, bird.y + birdHeight / 2); 
+            
+            ctx.rotate(bird.angle); 
+            ctx.drawImage(birdImage, -birdWidth / 2, -birdHeight / 2, birdWidth, birdHeight); 
+            ctx.restore();
+        }
+
+    
+        function drawAllBirds(players) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);  
+            for (let userId in players) {
+                drawBird(players[userId]);  
+            }
+        }
+        const angleSpeed = 0.2;
+   
+        function updateBirdPosition() {
+            let dx = 0;
+            let dy = 0;
+            let targetAngle = myBird.angle;
+            let hasmoved = false;
+            // Update target position based on pressed keys
+            if (keyMap['ArrowUp']) {
+                dy = -speed;
+                targetAngle = 0 * Math.PI / 180;
+                hasmoved = true;
+            }
+            if (keyMap['ArrowDown']) {
+                dy = speed;
+                targetAngle = 180 * Math.PI / 180;
+                hasmoved = true;    
+            }
+            if (keyMap['ArrowLeft']) {
+                dx = -speed;
+                targetAngle = 270 * Math.PI / 180;
+                hasmoved = true;
+            }
+            if (keyMap['ArrowRight']) {
+                dx = speed;
+                targetAngle = 90 * Math.PI / 180;
+                hasmoved = true;
+            }
+
+            // Smoothly rotate towards the target angle
+            let angleDifference = targetAngle - myBird.angle;
+
+
+            if (angleDifference > Math.PI) {
+                targetAngle -= 2 * Math.PI;
+            } else if (angleDifference < -Math.PI) {
+                targetAngle += 2 * Math.PI;
+            }
+
+            
+            angleDifference = targetAngle - myBird.angle;
+
+            if (Math.abs(angleDifference) > angleSpeed) {
+                myBird.angle += Math.sign(angleDifference) * angleSpeed; 
+            } else {
+                myBird.angle = targetAngle; 
+            }
+            
+            targetX = Math.min(Math.max(0, targetX + dx), canvas.width - 50);
+            targetY = Math.min(Math.max(0, targetY + dy), canvas.height - 50);
+            
+            const easing = 1; 
+            myBird.x += (targetX - myBird.x) * easing;
+            myBird.y += (targetY - myBird.y) * easing;
+            
+            if (hasmoved){
+            socket.emit('move_bird', myBird);
+            }
+            
+            requestAnimationFrame(updateBirdPosition);
+        }
+
+        window.addEventListener('keydown', (event) => {
+            keyMap[event.key] = true;
+        });
+
+        window.addEventListener('keyup', (event) => {
+            keyMap[event.key] = false;
+        });
+
+        socket.on('update_bird_positions', (players) => {
+            drawAllBirds(players);
+        });
+    </script>
+</body>
+</html>

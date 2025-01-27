@@ -1,0 +1,47 @@
+{
+  "title": "Snowstorm",
+  "description": "Being an air traffic controller may not be your dream job. There are so many protocols with radio communications, radar, etc. And in case of an emergency, some parts of the message might be missing.\n\nThis is a remote challenge, you can connect to the service with: `nc snowstorm.challs.srdnlen.it 1089`\n\nAuthor: @church",
+  "authors": [
+    "Matteo Chiesa <@church>"
+  ],
+  "tags": [
+    "pwn"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{39\\.22N_9\\.12E_4nd_I'll_C0n71Nu3_70_7R4n5M1t_7h15_M355463\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "libc.so.6",
+      "type": "upload",
+      "path": "./attachments/libc.so.6",
+      "dynamic": false
+    },
+    {
+      "name": "snowstorm",
+      "type": "upload",
+      "path": "./attachments/snowstorm",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "snowstorm.challs.srdnlen.it",
+    "port": 1089
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

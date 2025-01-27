@@ -1,0 +1,44 @@
+{
+  "title": "Chess",
+  "description": "Look at this cool encoding, it's made for chess lovers!! Man I love chess...\n\nThis is a remote challenge, you can connect to the service with: `nc chess.challs.srdnlen.it 4012`",
+  "authors": [
+    "Nome Cognome <@fiara>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [
+    "prng",
+    "linear algebra"
+  ],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{D4mn_I_R3aLly_L1k3_Ch3s5_sTuFf_4D616E2049206C6F766520426F6F6273\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "src.zip",
+      "type": "upload",
+      "path": "./attachments/src.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "tcp",
+    "host": "chess.challs.srdnlen.it",
+    "port": 4012
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

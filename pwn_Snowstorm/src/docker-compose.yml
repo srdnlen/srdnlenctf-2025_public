@@ -1,0 +1,8 @@
+services:
+    pwn-snowstorm:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        ports:
+            - 1089:1089

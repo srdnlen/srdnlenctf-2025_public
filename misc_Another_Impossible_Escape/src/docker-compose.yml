@@ -1,0 +1,7 @@
+services:
+  chall:
+    build: .
+    container_name: "another_impossible_escape"
+    ports:
+      - "0.0.0.0:3434:3434"
+    restart: unless-stopped

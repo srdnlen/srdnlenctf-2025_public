@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="missing-permission">
+        <h2>Error - Missing Permissions</h2>
+        <h1>Only Admins can access Ben10!</h1>
+        <br>
+        <a href="{{ url_for('home') }}">Go to Home</a>
+    </div>
+{% endblock %}

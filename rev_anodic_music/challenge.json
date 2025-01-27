@@ -1,0 +1,42 @@
+{
+  "title": "Anodic Music",
+  "description": "ENCYCLOPEDIA [Medium: Success] Your mangled brain would like you to know there is a challenge called Anodic Music.",
+  "authors": [
+    "Nome Cognome <@zoop>"
+  ],
+  "tags": [
+    "rev"
+  ],
+  "hiddenTags": [],
+  "order": 0,
+  "flags": [
+    "^srdnlen\\{Mr_Evrart_is_helping_me_find_my_flag_af04993a13b8eecd\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 50
+  },
+  "files": [
+    {
+      "name": "egghead",
+      "type": "upload",
+      "path": "./attachments/egghead",
+      "dynamic": false
+    },
+    {
+      "name": "hardcore.bnk",
+      "type": "upload",
+      "path": "./attachments/hardcore.bnk",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 30
+    }
+  }
+}

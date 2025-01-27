@@ -1,0 +1,91 @@
+<form id="signup-form" style="width: 40%; margin-left: 30%">
+    <h1 class="h3 mb-3 fw-normal">Join the Piston Cup Racing Team!</h1>
+    <p class="lead">Sign up now and get ready to race with Lightning McQueen!</p>
+
+  <div class="form-group">
+    <label for="signup-username">Choose your Racing Name</label>
+    <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter your Lightning Speed username">
+    <small id="usernameHelp" class="form-text text-muted">Your racing name will be your identity on the track.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Pit Stop Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Enter your secret pit stop password">
+  </div>
+
+  <input id="signup-submit" class="w-100 btn btn-lg btn-danger" type="submit" value="Start Your Engine!"></input>
+
+  <br/>
+  <br/>
+  <div id="response" class="text-center small py-1" style="border-radius: 4px; display: none"></div>
+</form>
+
+<style>
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 5px;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        width: 150px;
+        background-color: #FF4500;
+        border: none;
+    }
+
+    input::placeholder {
+        color: #000000;
+        opacity: 1;
+    }
+
+    input:placeholder-shown {
+        border: 1px solid #FF4500;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .lead {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #FF6347;
+    }
+
+    .btn-danger:hover {
+        background-color: #FF0000;
+    }
+
+    h1, p {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+</style>
+
+<script>
+    document.getElementById('signup-form').onsubmit = async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const req = await fetch('/register-user', {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const res = await req.json();
+
+        if (res.success) {
+            window.location.href = '/';
+            return;                
+        } else {
+            document.getElementById('response').innerText = 'Error: Could not register! Please try again.';
+            document.getElementById('response').style.display = 'block';
+            document.getElementById('response').style.color = 'red';
+        }
+    };
+</script>
