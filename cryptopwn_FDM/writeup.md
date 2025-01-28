@@ -3,7 +3,7 @@
 **CTF:** Srdnlen CTF 2025\
 **Category:** Crypto PWN\
 **Difficulty:** Hard\
-**Solves:** TBA\
+**Solves:** 1\
 **Authors:** [@doliv](https://github.com/doliv8) (Diego Oliva) & [@guaddu](https://github.com/guaddu) (Davide Sechi)
 
 ---
